@@ -346,7 +346,7 @@ class IDEALLEDInstance:
 
     @retry_bluetooth_connection_error
     async def turn_off(self):
-        packet = bytearray.fromhex("05 54 55 52 4E 01 00 00 00 00 00 00 00 00 00 00")
+        packet = bytearray.fromhex("05 54 55 52 4E 00 00 00 00 00 00 00 00 00 00 00")
         packet[5] = 0
         await self._write(packet)
         self._is_on = False
